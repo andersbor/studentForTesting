@@ -47,6 +47,7 @@ namespace StudentForTesting
                 _name = value;
             }
         }
+
         /// <summary>
         /// Address of student
         /// </summary>
