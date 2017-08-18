@@ -7,7 +7,7 @@ namespace UnitTestProject1
     [TestClass]
     public class StudentTest
     {
-        private Student student = new Student("Bo", "Roskilde", Gender.Male, 1);
+        private readonly Student _student = new Student("Bo", "Roskilde", Gender.Male, 1);
 
         [TestMethod]
         public void TestConstructor()
@@ -24,28 +24,34 @@ namespace UnitTestProject1
         [ExpectedException(typeof(ArgumentNullException))]
         public void TestNameNull()
         {
-            student.Name = null;
+            _student.Name = null;
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestNameShort()
         {
-            student.Name = "Y";
+            _student.Name = "Y";
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestSemesterLow()
         {
-            student.Semester = 0;
+            _student.Semester = 0;
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void TestSemesterHigh()
         {
-            student.Semester = 9;
+            _student.Semester = 9;
+        }
+
+        [TestMethod]
+        public void TestToString()
+        {
+            Assert.AreEqual("Bo Roskilde Male 1", _student.ToString());
         }
     }
 }

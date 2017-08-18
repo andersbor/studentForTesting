@@ -10,10 +10,8 @@ namespace StudentForTesting
         Male, Female
     }
 
-    public class Student
+    public class Student : Person
     {
-        private string _name;
-        private string _address;
         private int _semester;
 
         /// <summary>
@@ -32,37 +30,6 @@ namespace StudentForTesting
         }
 
         /// <summary>
-        /// Name of Student
-        /// </summary>
-        /// <exception cref="ArgumentNullException">if name is null</exception>
-        /// <exception cref="ArgumentException">if name length is less than 2</exception>
-        public string Name
-
-        {
-            get { return _name; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException("name", "Name is null");
-                if (value.Length < 2) throw new ArgumentException("Name length must be at least 2 characters");
-                _name = value;
-            }
-        }
-
-        /// <summary>
-        /// Address of student
-        /// </summary>
-        /// <exception cref="ArgumentNullException">if address is null</exception>
-        public string Address
-        {
-            get { return _address; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException("address", "Address is null");
-                _address = value;
-            }
-        }
-
-        /// <summary>
         /// Semester of student, must 1 &lt;= semester &lt;= 8
         /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">if semester is either to low or to high</exception>
@@ -76,9 +43,9 @@ namespace StudentForTesting
             }
         }
 
-        /// <summary>
-        /// Gender of Student
-        /// </summary>
-        public Gender Gender { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + " " + Semester;
+        }
     }
 }

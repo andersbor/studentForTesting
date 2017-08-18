@@ -2,10 +2,8 @@
 
 namespace StudentForTesting
 {
-    public class Teacher
+    public class Teacher : Person
     {
-        private string _address;
-        private string _name;
         private int _salary;
 
         public Teacher(string name, string address, int salary, Gender gender)
@@ -15,30 +13,6 @@ namespace StudentForTesting
             Salary = salary;
             Gender = gender;
         }
-
-        public string Name
-
-        {
-            get { return _name; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException("name", "Name is null");
-                if (value.Length < 2) throw new ArgumentException("Name length must be at least 2 characters");
-                _name = value;
-            }
-        }
-
-        public string Address
-        {
-            get { return _address; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException("address", "Address is null");
-                _address = value;
-            }
-        }
-
-        public Gender Gender { get; set; }
 
         public int Salary
         {
@@ -50,6 +24,9 @@ namespace StudentForTesting
             }
         }
 
-       
+        public override string ToString()
+        {
+            return base.ToString() + " " + Salary;
+        }
     }
 }
