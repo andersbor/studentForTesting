@@ -2,7 +2,6 @@
 
 namespace StudentForTesting
 {
-
     public enum Gender
     {
         Male, Female
@@ -14,6 +13,13 @@ namespace StudentForTesting
         private string _address;
         private int _semester;
 
+        public Student(string name, string address, Gender gender, int semester)
+        {
+            Name = name;
+            Address = address;
+            Gender = gender;
+            Semester = semester;
+        }
 
         public string Name
 
