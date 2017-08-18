@@ -2,6 +2,9 @@
 
 namespace StudentForTesting
 {
+    /// <summary>
+    /// Gender type: Male, Female
+    /// </summary>
     public enum Gender
     {
         Male, Female
@@ -13,6 +16,13 @@ namespace StudentForTesting
         private string _address;
         private int _semester;
 
+        /// <summary>
+        /// Constructs an object of the type Student
+        /// </summary>
+        /// <param name="name">Name of student</param>
+        /// <param name="address">Address of student</param>
+        /// <param name="gender">Gender of student</param>
+        /// <param name="semester">Semester of student</param>
         public Student(string name, string address, Gender gender, int semester)
         {
             Name = name;
@@ -21,6 +31,11 @@ namespace StudentForTesting
             Semester = semester;
         }
 
+        /// <summary>
+        /// Name of Student
+        /// </summary>
+        /// <exception cref="ArgumentNullException">if name is null</exception>
+        /// <exception cref="ArgumentException">if name length is less than 2</exception>
         public string Name
 
         {
@@ -32,7 +47,10 @@ namespace StudentForTesting
                 _name = value;
             }
         }
-
+        /// <summary>
+        /// Address of student
+        /// </summary>
+        /// <exception cref="ArgumentNullException">if address is null</exception>
         public string Address
         {
             get { return _address; }
@@ -43,6 +61,10 @@ namespace StudentForTesting
             }
         }
 
+        /// <summary>
+        /// Semester of student, must 1 &lt;= semester &lt;= 8
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException">if semester is either to low or to high</exception>
         public int Semester
         {
             get { return _semester; }
@@ -53,6 +75,9 @@ namespace StudentForTesting
             }
         }
 
+        /// <summary>
+        /// Gender of Student
+        /// </summary>
         public Gender Gender { get; set; }
     }
 }
