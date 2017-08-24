@@ -49,6 +49,13 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestAddressNull()
+        {
+            _student.Address = null;
+        }
+
+        [TestMethod]
         public void TestToString()
         {
             Assert.AreEqual("Bo Roskilde Male 1", _student.ToString());

@@ -7,7 +7,7 @@ namespace StudentForTesting
     /// </summary>
     public enum Gender
     {
-        Male, Female
+        Male, Female   
     }
 
     public class Student : Person
