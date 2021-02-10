@@ -1,7 +1,7 @@
 ﻿namespace StudentForTesting
 {
     /// <summary>
-    /// GenderType type: Male, Female
+    /// Gender type: Male, Female
     /// </summary>
     public enum GenderType
     {

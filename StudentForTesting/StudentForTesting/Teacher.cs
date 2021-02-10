@@ -19,7 +19,7 @@ namespace StudentForTesting
         public string Name
 
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (value == null) throw new ArgumentNullException("name", "Name is null");
@@ -30,7 +30,7 @@ namespace StudentForTesting
 
         public string Address
         {
-            get { return _address; }
+            get => _address;
             set
             {
                 if (value == null) throw new ArgumentNullException("address", "Address is null");
@@ -42,7 +42,7 @@ namespace StudentForTesting
 
         public int Salary
         {
-            get { return _salary; }
+            get => _salary;
             set
             {
                 if (value < 0) throw new ArgumentOutOfRangeException("salary", value, "salary less than 0");

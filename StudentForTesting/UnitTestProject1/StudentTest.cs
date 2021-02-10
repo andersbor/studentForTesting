@@ -7,45 +7,51 @@ namespace UnitTestProject1
     [TestClass]
     public class StudentTest
     {
-        private Student student = new Student("Bo", "Roskilde", GenderType.Male, 1);
+        private Student _student;
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            _student = new Student("Bo", "Roskilde", GenderType.Male, 1);
+        }
 
         [TestMethod]
         public void TestConstructor()
         {
             Student st = new Student("Bo", "Roskilde", GenderType.Male, 1);
-      
+
             Assert.AreEqual("Bo", st.Name);
             Assert.AreEqual("Roskilde", st.Address);
-            Assert.AreEqual(GenderType.Male, st.GenderType);
+            Assert.AreEqual(GenderType.Male, st.Gender);
             Assert.AreEqual(1, st.Semester);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void TestNameNull()
+        public void TestName()
         {
-            student.Name = null;
+            _student.Name = "Bo";
+            Assert.AreEqual("Bo", _student.Name);
+            Assert.ThrowsException<ArgumentNullException>(() => _student.Name = null);
+            Assert.ThrowsException<ArgumentException>(() => _student.Name = "A");
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
-        public void TestNameShort()
+        public void TestSemester()
         {
-            student.Name = "Y";
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _student.Semester = 0);
+            _student.Semester = 1;
+            Assert.AreEqual(1, _student.Semester);
+            _student.Semester = 8;
+            Assert.AreEqual(8, _student.Semester);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _student.Semester = 9);
         }
-
+        
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void TestSemesterLow()
+        public void TestAddress()
         {
-            student.Semester = 0;
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void TestSemesterHigh()
-        {
-            student.Semester = 9;
+            _student.Address = "Roskilde";
+            Assert.AreEqual("Roskilde", _student.Address);
+            Assert.ThrowsException<ArgumentNullException>(() => _student.Address = null);
         }
     }
 }

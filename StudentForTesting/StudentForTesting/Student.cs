@@ -2,8 +2,6 @@
 
 namespace StudentForTesting
 {
-    
-
     public class Student
     {
         private string _name;
@@ -15,13 +13,13 @@ namespace StudentForTesting
         /// </summary>
         /// <param name="name">Name of student</param>
         /// <param name="address">Address of student</param>
-        /// <param name="genderType">GenderType of student</param>
+        /// <param name="gender">Gender of student</param>
         /// <param name="semester">Semester of student</param>
-        public Student(string name, string address, GenderType genderType, int semester)
+        public Student(string name, string address, GenderType gender, int semester)
         {
             Name = name;
             Address = address;
-            GenderType = genderType;
+            Gender = gender;
             Semester = semester;
         }
 
@@ -33,7 +31,7 @@ namespace StudentForTesting
         public string Name
 
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (value == null) throw new ArgumentNullException("name", "Name is null");
@@ -48,7 +46,7 @@ namespace StudentForTesting
         /// <exception cref="ArgumentNullException">if address is null</exception>
         public string Address
         {
-            get { return _address; }
+            get => _address;
             set
             {
                 if (value == null) throw new ArgumentNullException("address", "Address is null");
@@ -62,7 +60,7 @@ namespace StudentForTesting
         /// <exception cref="ArgumentOutOfRangeException">if semester is either to low or to high</exception>
         public int Semester
         {
-            get { return _semester; }
+            get => _semester;
             set
             {
                 if (1 <= value && value <= 8) _semester = value;
@@ -71,8 +69,8 @@ namespace StudentForTesting
         }
 
         /// <summary>
-        /// GenderType of Student
+        /// Gender of Student
         /// </summary>
-        public GenderType GenderType { get; set; }
+        public GenderType Gender { get; set; }
     }
 }
