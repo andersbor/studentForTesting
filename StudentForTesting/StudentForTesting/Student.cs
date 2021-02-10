@@ -2,13 +2,7 @@
 
 namespace StudentForTesting
 {
-    /// <summary>
-    /// Gender type: Male, Female
-    /// </summary>
-    public enum Gender
-    {
-        Male, Female
-    }
+    
 
     public class Student
     {
@@ -21,13 +15,13 @@ namespace StudentForTesting
         /// </summary>
         /// <param name="name">Name of student</param>
         /// <param name="address">Address of student</param>
-        /// <param name="gender">Gender of student</param>
+        /// <param name="genderType">GenderType of student</param>
         /// <param name="semester">Semester of student</param>
-        public Student(string name, string address, Gender gender, int semester)
+        public Student(string name, string address, GenderType genderType, int semester)
         {
             Name = name;
             Address = address;
-            Gender = gender;
+            GenderType = genderType;
             Semester = semester;
         }
 
@@ -77,8 +71,8 @@ namespace StudentForTesting
         }
 
         /// <summary>
-        /// Gender of Student
+        /// GenderType of Student
         /// </summary>
-        public Gender Gender { get; set; }
+        public GenderType GenderType { get; set; }
     }
 }

@@ -7,16 +7,16 @@ namespace UnitTestProject1
     [TestClass]
     public class StudentTest
     {
-        private Student student = new Student("Bo", "Roskilde", Gender.Male, 1);
+        private Student student = new Student("Bo", "Roskilde", GenderType.Male, 1);
 
         [TestMethod]
         public void TestConstructor()
         {
-            Student st = new Student("Bo", "Roskilde", Gender.Male, 1);
+            Student st = new Student("Bo", "Roskilde", GenderType.Male, 1);
       
             Assert.AreEqual("Bo", st.Name);
             Assert.AreEqual("Roskilde", st.Address);
-            Assert.AreEqual(Gender.Male, st.Gender);
+            Assert.AreEqual(GenderType.Male, st.GenderType);
             Assert.AreEqual(1, st.Semester);
         }
 

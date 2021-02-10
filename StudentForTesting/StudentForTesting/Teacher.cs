@@ -8,12 +8,12 @@ namespace StudentForTesting
         private string _name;
         private int _salary;
 
-        public Teacher(string name, string address, int salary, Gender gender)
+        public Teacher(string name, string address, int salary, GenderType genderType)
         {
             Name = name;
             Address = address;
             Salary = salary;
-            Gender = gender;
+            GenderType = genderType;
         }
 
         public string Name
@@ -38,7 +38,7 @@ namespace StudentForTesting
             }
         }
 
-        public Gender Gender { get; set; }
+        public GenderType GenderType { get; set; }
 
         public int Salary
         {
